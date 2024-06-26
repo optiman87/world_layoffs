@@ -1,4 +1,4 @@
-use world_layoffs;
+USE world_layoffs;
 
 # Count the number of records in the table
 SELECT 
