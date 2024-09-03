@@ -176,3 +176,11 @@ WHERE `year` IS NOT NULL)
 SELECT * FROM ranking_cte 
 WHERE ranking <= 5;
 
+# Drop the id column as it is no longer required
+ALTER TABLE layoffs_staging
+DROP COLUMN  id;
+
+# Add current timestamp to the processed_timestamp column for audit purposes
+ALTER TABLE layoffs_staging
+ADD COLUMN (processed_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
